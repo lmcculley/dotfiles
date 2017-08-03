@@ -20,10 +20,6 @@ HISTFILESIZE=2000
 # update the values of LINES and COLUMNS.
 shopt -s checkwinsize
 
-# setup GitHub rsa key
-eval "$(ssh-agent -s)"
-ssh-add ~/.ssh/omnivore_rsa
-
 # If this is an xterm set the title to user@host:dir
 case "$TERM" in
 xterm*|rxvt*)
