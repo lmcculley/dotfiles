@@ -43,5 +43,10 @@ PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 
 PATH=$PATH:$HOME/.bin
 
+if [ -x "$(command -v go)" ]; then
+    PATH=$PATH:$(go env GOPATH)/bin
+    GOPATH=$(go env GOPATH)
+fi
+
 export EDITOR=vim
 
