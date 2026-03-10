@@ -1,0 +1,40 @@
+[alias]
+    co = checkout
+    com = checkout master
+    p = pull
+    cp = cherry-pick
+    st = status
+    br = branch
+    ci = commit
+
+    cif = "!git ci --fixup HEAD"
+    cifa = "!git ci -a --fixup HEAD"
+    pushu = "!git push -u origin `git symbolic-ref --short HEAD`"
+    ll = "!git log --oneline --graph --color --decorate --all --abbrev-commit"
+    ls = "!git log --pretty=short"
+    brg = "!git br -vv | grep gone | awk '{print $1}' | xargs git br -D"
+[user]
+    name = Lance McCulley
+    email = lancemcculley@gmail.com
+    signingkey = 3100C5BA69F91198
+[core]
+    excludesfile = /Users/lance.mcculley/.gitignore_global
+    filemode = false
+[commit]
+    gpgsign = true
+[fetch]
+    prune = true
+[pull]
+    rebase = true
+[gpg]
+    program = /usr/local/MacGPG2/bin/gpg2
+[tag]
+    forceSignAnnotated = true
+[credential "https://github.com"]
+    helper =
+    helper = !/opt/homebrew/bin/gh auth git-credential
+[credential "https://gist.github.com"]
+    helper =
+    helper = !/opt/homebrew/bin/gh auth git-credential
+[rerere]
+    enabled = true
